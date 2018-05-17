@@ -23,7 +23,7 @@ export class DraggableDirective {
   /**
    * Клонирует элемент с цветом, чтобы пользователь мог видеть какой цвет он тянет
    */
-  clone() {
+  private clone(): void {
     this.clonedEl = this.el.nativeElement.cloneNode(true);
     this.clonedEl.classList.add('clone');
     this.clonedEl.style.cssText += 'position: fixed';
@@ -47,7 +47,7 @@ export class DraggableDirective {
   /**
    * Убирает клон и связанные с ним ивенты
    */
-  private removeClone() {
+  private removeClone(): void {
     this.clonedEl.remove();
     document.body.classList.remove('dragging');
     document.onmouseup = () => {};

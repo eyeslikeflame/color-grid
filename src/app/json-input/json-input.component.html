@@ -1,10 +1,13 @@
-
 <div class="buttons">
-  <div class="button" (click)="showJsonCopy = !showJsonCopy">JSON</div>
+  <div class="button" (click)="showJsonCopy = !showJsonCopy">Show JSON</div>
+  <div class="button" (click)="showJsonInsert = !showJsonInsert">Paste JSON</div>
 </div>
-<input *ngIf="showJsonCopy"
-       [ngModel]="appService.emptyCells | json"
-       (input)="inputEmptyCells($event)"
-       disabled />
-<input *ngIf="showJsonInsert"
- />
+<div class="inputs">
+  <input name="copyJson"
+        class="copy-json"
+        (click)="copyJson($event)"
+        *ngIf="showJsonCopy"
+        [ngModel]="appService.emptyCells | json"
+        disabled />
+  <input *ngIf="showJsonInsert" (input)="inputJson($event)"/>
+</div>
