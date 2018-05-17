@@ -12,12 +12,13 @@ export class JsonInputComponent implements OnInit {
   constructor(public appService: AppService) { }
 
   public showJsonCopy = false;
-  public showJsonPaste = false;
+  public showJsonInsert = false;
 
   public copyJson(event) {
     event.srcElement.disabled = false;
     event.srcElement.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
+    alert('Copied to clipboard');
   }
 
   /**

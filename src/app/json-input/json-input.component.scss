@@ -23,7 +23,7 @@ div {
   border-radius: 24px;
   transition: 150ms;
   margin: 0 10px;
-  &:hover {
+  &:hover, &.active {
     color: #ffffff;
     background-color: tomato;
     box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
@@ -32,4 +32,20 @@ div {
 
 .copy-json {
   cursor: pointer;
+  &:hover + .copy-icon{
+    opacity: 1;
+  }
+}
+
+.input {
+  position: relative;
+}
+
+.copy-icon {
+  position: absolute;
+  right: 0;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 100ms;
 }

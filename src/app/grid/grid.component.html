@@ -1,10 +1,18 @@
 <div class="title">{{type}}</div>
 <div class="grid" [ngClass]="type">
   <ng-container *ngIf="type === 'colors'">
-    <div class="cell" [appDraggable]="cell" (drop)="onDrop($event)" *ngFor="let cell of appService.colorCells" [ngStyle]="{'background-color': cell.rgb }"></div>
+    <div class="cell"
+         [appDraggable]="cell"
+         (drop)="onDrop($event)"
+         *ngFor="let cell of appService.colorCells"
+         [ngStyle]="{'background-color': cell.rgb }"></div>
   </ng-container>
   <ng-container *ngIf="type === 'empty'">
-    <div class="cell" appDroppable="" [attr.i]="i" *ngFor="let cell of appService.emptyCells; let i = index" [ngStyle]="{'background-color': cell && cell.rgb }"></div>
+    <div class="cell"
+         appDroppable=""
+         [attr.i]="i"
+         *ngFor="let cell of appService.emptyCells; let i = index"
+         [ngStyle]="{'background-color': cell && cell.rgb }"></div>
   </ng-container>
 </div>
 
