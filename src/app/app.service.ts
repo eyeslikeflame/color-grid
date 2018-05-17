@@ -6,6 +6,7 @@ import { Cell } from './cell';
 export class AppService {
   colorCells;
   emptyCells;
+  jsonEmpty = '';
   constructor() { }
 
   /**
@@ -22,10 +23,16 @@ export class AppService {
    */
   public generateColorsGrid(capacity: number) {
     this.colorCells = [];
-
+    let r, g, b;
     for (let i = 0; i < capacity; i++) {
-      this.colorCells[i] = new Cell(this.random(), this.random(), this.random());
+      [r, g, b] = [this.random(), this.random(), this.random()];
+      this.colorCells[i] = new Cell(r, g, b);
     }
+  }
+
+  public jsonGrid() {
+    this.jsonEmpty = JSON.stringify(this.emptyCells);
+    return this.jsonEmpty;
   }
 
   private random() {

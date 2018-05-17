@@ -1,0 +1,22 @@
+input {
+  width: 600px;
+  height: 25px;
+  font-size: 14px;
+}
+div {
+  user-select: none;
+}
+.button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 18px;
+  border: solid 1px tomato;
+  border-radius: 24px;
+  transition: 150ms;
+  &:hover {
+    color: #ffffff;
+    background-color: tomato;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+  }
+}
